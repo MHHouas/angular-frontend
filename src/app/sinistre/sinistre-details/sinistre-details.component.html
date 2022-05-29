@@ -1,0 +1,47 @@
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Détails</a>
+      <ng-template ngbNavContent>
+        <div>
+            <div>
+                <label> <b> Date de l'accident : </b></label> {{sinistre.dateAccident}}
+            </div>
+            <div>
+                <label> <b> Date de création : </b></label> {{sinistre.dateCreation}}
+            </div>
+            <div>
+                <label> <b> Statut : </b></label> {{sinistre.statut}}
+            </div>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Contrat</a>
+      <ng-template ngbNavContent>
+        <div>
+            <div>
+                <label> <b> Numéro du contrat : </b></label> {{contrat.numero}}
+            </div>
+            <div>
+                <label> <b> Date de début : </b></label> {{contrat.dateDebut}}
+            </div>
+            <div>
+                <label> <b> Date de fin : </b></label> {{contrat.dateFin}}
+            </div>
+            <div>
+                <label> <b> Nom de l'assuré : </b></label> {{contrat.nomAssure}}
+            </div>
+            <div>
+                <label> <b> Numéro d'immatriculation du véhicule : </b></label> {{contrat.matriculeVehicule}}
+            </div>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>Photos</a>
+      <ng-template ngbNavContent>
+        <app-photos [sinistreId]="id"></app-photos>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>

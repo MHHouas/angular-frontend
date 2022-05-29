@@ -1,0 +1,38 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Mettre à jour un contrat</h3>
+    <form  [formGroup]="contratForm" (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label>Numéro du contrat</label>
+            <input type="text" class="form-control" id="numero"
+                formControlName="numero" name="numero">
+        </div>
+    
+        <div class="form-group">
+            <label>Date de début</label>
+            <input type="date" class="form-control" id="dateDebut"
+                formControlName="dateDebut" name="dateDebut">
+        </div>
+    
+        <div class="form-group">
+            <label>Date de fin</label>
+            <input type="date" class="form-control" id="dateFin"
+                formControlName="dateFin" name="dateFin">
+        </div>
+
+        <div class="form-group">
+            <label>Nom de l'assuré</label>
+            <input type="text" class="form-control" id="nomAssure"
+                formControlName="nomAssure" name="nomAssure">
+        </div>
+
+        <div class="form-group">
+            <label>Numéro d'immatriculation du véhicule</label>
+            <input type="text" class="form-control" id="matriculeVehicule"
+                formControlName="matriculeVehicule" name="matriculeVehicule">
+        </div>
+    
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    
+    </form>
+</div> 

@@ -1,0 +1,27 @@
+<h2>Liste des contrats</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Numéro du contrat</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Nom de l'assuré</th>
+            <th>Numéro d'immatriculation du véhicule</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let contrat of contrats" >
+            <td> {{ contrat.numero }} </td>
+            <td> {{ contrat.dateDebut }} </td>
+            <td> {{ contrat.dateFin }} </td>
+            <td> {{ contrat.nomAssure }} </td>
+            <td> {{ contrat.matriculeVehicule }} </td>
+            <td>
+                <button (click) = "updateContrat(contrat.numero)" class = "btn btn-info">Mettre à jour</button>
+                <button (click) = "deleteContrat(contrat.numero)" class = "btn btn-danger" style="margin-left: 10px">Supprimer</button>
+                <button (click) = "contratDetails(contrat.numero)" class = "btn btn-info" style="margin-left: 10px">Détails</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+        <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Sinistres<span class="caret"></span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="create-sinistre">Créer</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="sinistres">Liste</a>               
+            </div>
+        </li>
+        <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Contrats<span class="caret"></span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="create-contrat">Créer</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="contrats">Liste</a>               
+            </div>
+        </li>
+        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Se connecter</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Se déconnecter</a></li>
+    </ul>
+</nav>

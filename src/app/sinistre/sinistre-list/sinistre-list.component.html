@@ -1,0 +1,27 @@
+<h2>Liste des sinistres</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Numéro du sinistre</th>
+            <th>Numéro du contrat</th>
+            <th>Date de l'accident</th>
+            <th>Date de création</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sinistre of sinistres" >
+            <td> {{sinistre.id}} </td>
+            <td> {{sinistre.numeroContrat}} </td>
+            <td> {{ sinistre.dateAccident }} </td>
+            <td> {{ sinistre.dateCreation }} </td>
+            <td> {{ sinistre.statut }} </td>
+            <td>
+                <button (click) = "updateSinistre(sinistre.id)" class = "btn btn-info">Mettre à jour</button>
+                <button (click) = "deleteSinistre(sinistre.id)" class = "btn btn-danger" style="margin-left: 10px">Supprimer</button>
+                <button (click) = "sinistreDetails(sinistre.id)" class = "btn btn-info" style="margin-left: 10px">Détails</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
